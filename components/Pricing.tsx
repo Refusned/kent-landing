@@ -86,8 +86,8 @@ export default function Pricing() {
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        Вы платите не за бота, а за рабочий инструмент под конкретный участок
-        бизнеса
+        Вы платите не за технологию, а за рабочий инструмент под конкретный
+        участок бизнеса
       </motion.p>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-3 gap-6"

@@ -30,19 +30,12 @@ export default function Hero() {
           <p className="text-2xl sm:text-3xl text-zinc-300 mb-8 font-light tracking-wide animate-fade-up delay-100">
             Твой{" "}
             <span className="text-blue-400 font-medium">персональный</span>{" "}
-            AI-ассистент
+            ассистент в Telegram
           </p>
 
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-            Я помогаю управлять задачами, отвечать на вопросы, автоматизировать
-            рутину и организовывать твою цифровую жизнь — прямо из{" "}
-            <a
-              className="text-blue-400 hover:text-blue-300 underline underline-offset-4 decoration-blue-400/30 hover:decoration-blue-300 transition-colors"
-              href="#"
-            >
-              Telegram
-            </a>
-            .
+            Управляю задачами, веду расписание, отвечаю клиентам, снимаю рутину —
+            как настоящий помощник, только быстрее, дешевле и всегда на связи.
           </p>
         </div>
       </div>
