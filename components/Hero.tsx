@@ -38,7 +38,7 @@ export default function Hero() {
             рутину и организовывать твою цифровую жизнь — прямо из{" "}
             <a
               className="text-blue-400 hover:text-blue-300 underline underline-offset-4 decoration-blue-400/30 hover:decoration-blue-300 transition-colors"
-              href="https://t.me/kent_ai_bot"
+              href="#"
             >
               Telegram
             </a>

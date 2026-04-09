@@ -18,7 +18,7 @@ export default function LearnMore() {
         </h2>
         <div className="flex flex-wrap gap-4">
           <a
-            href="https://t.me/kent_ai_bot"
+            href="#"
             className="group px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-lg hover:from-blue-500 hover:to-cyan-500 transition-transform duration-150 hover:scale-105"
           >
             Попробовать Kent{" "}

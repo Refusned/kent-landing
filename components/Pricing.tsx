@@ -135,7 +135,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="https://t.me/kent_ai_bot"
+              href="#"
               className={`mt-8 block text-center py-3 rounded-full font-bold text-sm transition-all duration-150 ${
                 plan.highlight
                   ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-500 hover:to-cyan-500 hover:scale-105"
