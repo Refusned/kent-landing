@@ -26,12 +26,6 @@ export default function LearnMore() {
               →
             </span>
           </a>
-          <a
-            href="https://github.com/openclaw/openclaw"
-            className="px-8 py-4 rounded-full border-2 border-zinc-700 text-zinc-300 font-bold text-lg hover:border-zinc-500 hover:text-white hover:bg-zinc-900/50 transition-colors duration-150"
-          >
-            OpenClaw на GitHub
-          </a>
         </div>
       </motion.div>
     </section>
