@@ -30,7 +30,7 @@ export default function Hero() {
           <p className="text-2xl sm:text-3xl text-zinc-300 mb-8 font-light tracking-wide animate-fade-up delay-100">
             Твой{" "}
             <span className="text-blue-400 font-medium">персональный</span>{" "}
-            ассистент в Telegram
+            ИИ-ассистент в Telegram
           </p>
 
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
