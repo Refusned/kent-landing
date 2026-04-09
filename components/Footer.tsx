@@ -12,14 +12,6 @@ export default function Footer() {
             OpenClaw
           </a>
         </p>
-        <p className="text-lg">
-          <a
-            className="text-zinc-400 hover:text-white transition-colors"
-            href="https://t.me/kent_ai_bot"
-          >
-            @kent_ai_bot
-          </a>
-        </p>
       </div>
     </footer>
   );
