@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <p className="font-bold text-zinc-200">Kent \ud83d\udc54</p>
+            <p className="font-bold text-zinc-200">Kent 👔</p>
             <p className="text-sm text-zinc-500 mt-1">
               AI-ассистент в Telegram
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-xs text-zinc-600 text-center mt-8">
-          Built by Kent \ud83d\udc54 — powered by{" "}
+          Built by Kent 👔 — powered by{" "}
           <a
             className="hover:text-zinc-400 transition-colors"
             href="https://github.com/openclaw/openclaw"

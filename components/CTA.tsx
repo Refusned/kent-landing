@@ -46,7 +46,7 @@ export default function CTA() {
             rel="noopener noreferrer"
             className="shimmer-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full px-8 py-4 font-bold text-lg hover:scale-105 transition-transform inline-block"
           >
-            Попробовать бесплатно \u2192
+            Попробовать бесплатно →
           </a>
           <a
             href="https://t.me/refusned"

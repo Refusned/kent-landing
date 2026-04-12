@@ -8,9 +8,9 @@ const rows = [
   { label: "Интеграции", chatgpt: "Нет", kent: "Google, Twitter, CRM" },
   { label: "Telegram", chatgpt: "Только браузер", kent: "Живёт в Telegram 24/7" },
   { label: "Проактивность", chatgpt: "Ждёт вопроса", kent: "Брифинги, напоминания" },
-  { label: "Голос", chatgpt: "Нет в Telegram", kent: "Надиктуй \u2014 сделает" },
+  { label: "Голос", chatgpt: "Нет в Telegram", kent: "Надиктуй — сделает" },
   { label: "Действия", chatgpt: "Только текст", kent: "Посты, CRM, документы" },
-  { label: "Цена", chatgpt: "~3 200\u00a0\u20bd/мес", kent: "от 2 990\u00a0\u20bd/мес", noBullets: true },
+  { label: "Цена", chatgpt: "~3 200 ₽/мес", kent: "от 2 990 ₽/мес", noBullets: true },
 ];
 
 export default function Comparison() {
@@ -33,7 +33,7 @@ export default function Comparison() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          ChatGPT \u2014 отличный чат. Kent \u2014 ваш сотрудник.
+          ChatGPT — отличный чат. Kent — ваш сотрудник.
         </motion.p>
 
         <motion.div
@@ -67,13 +67,13 @@ export default function Comparison() {
               </div>
               <div className="text-zinc-500 text-sm text-center">
                 {!row.noBullets && (
-                  <span className="text-zinc-600 mr-1">\u2715</span>
+                  <span className="text-zinc-600 mr-1">✕</span>
                 )}
                 {row.chatgpt}
               </div>
               <div className="text-zinc-200 text-sm text-center">
                 {!row.noBullets && (
-                  <span className="text-blue-400 font-medium mr-1">\u2713</span>
+                  <span className="text-blue-400 font-medium mr-1">✓</span>
                 )}
                 {row.kent}
               </div>
