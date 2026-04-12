@@ -8,7 +8,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" as const }}
         viewport={{ once: true, margin: "-100px" }}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-10 text-zinc-100">

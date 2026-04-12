@@ -1,5 +1,30 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { useInView, useMotionValue, useSpring, motion } from "framer-motion";
+
+function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: 2000 });
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) motionValue.set(value);
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (v) => {
+      if (ref.current) {
+        ref.current.textContent = Math.round(v) + suffix;
+      }
+    });
+    return unsubscribe;
+  }, [springValue, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
+
 export default function Hero() {
   return (
     <header className="relative overflow-hidden">
@@ -34,9 +59,70 @@ export default function Hero() {
           </p>
 
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-            Управляю задачами, веду расписание, отвечаю клиентам, снимаю рутину —
-            как настоящий помощник, только быстрее, дешевле и всегда на связи.
+            AI-ассистент, который берёт на себя посты, документы,
+            клиентскую базу и переписку. Работает 24/7. Стоит дешевле стажёра.
           </p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <a
+              href="https://t.me/ask_kent_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shimmer-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full px-8 py-4 font-bold text-lg hover:scale-105 transition-transform inline-block"
+            >
+              Попробовать бесплатно →
+            </a>
+            <a
+              href="https://t.me/refusned"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-zinc-700 hover:border-zinc-500 text-zinc-300 rounded-full px-8 py-4 font-bold text-lg transition-colors inline-block"
+            >
+              Обсудить внедрение
+            </a>
+          </motion.div>
+
+          <motion.p
+            className="text-sm text-zinc-500 mt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+          >
+            3 дня бесплатно. Без карты. Без регистрации.
+          </motion.p>
+
+          {/* Metrics */}
+          <motion.div
+            className="grid grid-cols-3 gap-8 mt-14 max-w-md mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                <AnimatedNumber value={30} suffix="+" />
+              </div>
+              <div className="text-xs sm:text-sm text-zinc-500 mt-1">постов/мес</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                <AnimatedNumber value={17} />
+              </div>
+              <div className="text-xs sm:text-sm text-zinc-500 mt-1">скиллов</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                24/7
+              </div>
+              <div className="text-xs sm:text-sm text-zinc-500 mt-1">на связи</div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

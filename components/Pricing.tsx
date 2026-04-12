@@ -1,152 +1,300 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const plans = [
   {
-    name: "Пилот",
-    price: "39 000",
-    period: "разово",
-    description: "Проверка гипотезы на одном сценарии",
+    name: "Старт",
+    monthlyPrice: "2 990",
+    annualPrice: "2 490",
+    annualTotal: "29 900",
+    setup: "4 990",
+    description: "Для знакомства с Kent",
     features: [
-      "1 рабочий сценарий",
-      "7-10 дней запуска",
-      "Настройка базы знаний",
-      "Тестирование и калибровка",
-      "Отчёт по результатам",
+      "5 скиллов на выбор",
+      "Голосовые сообщения",
+      "Telegram 24/7",
+      "Чат-поддержка",
+      "3 дня бесплатно",
     ],
     highlight: false,
+    cta: "Попробовать",
+    href: "https://t.me/ask_kent_bot",
   },
   {
-    name: "Запуск",
-    price: "от 59 000",
-    period: "разово",
-    description: "Полноценный запуск AI-ассистента под ваш процесс",
+    name: "Бизнес",
+    monthlyPrice: "6 990",
+    annualPrice: "5 825",
+    annualTotal: "69 900",
+    setup: "14 990",
+    description: "Полный набор для бизнеса",
     features: [
-      "Полный сценарий + handoff менеджеру",
-      "База знаний и tone of voice",
-      "Квалификация лидов и FAQ",
-      "Интеграции (CRM, календарь)",
-      "2 недели докрутки после запуска",
+      "Все 17 скиллов",
+      "Google: почта, календарь",
+      "Генерация картинок",
+      "Голос: ввод + озвучка",
+      "Приоритетная поддержка",
+      "3 дня бесплатно",
     ],
     highlight: true,
+    cta: "Выбрать",
+    href: "https://t.me/ask_kent_bot",
   },
   {
-    name: "Сопровождение",
-    price: "от 19 000",
-    period: "₽/мес",
-    description: "Постоянная оптимизация и контроль качества",
+    name: "Про",
+    monthlyPrice: "14 990",
+    annualPrice: "12 490",
+    annualTotal: "149 900",
+    setup: "49 990",
+    description: "Максимум возможностей",
     features: [
-      "Мониторинг и аналитика",
-      "Оптимизация сценариев",
-      "Доработки и новые функции",
-      "Контроль качества ответов",
-      "Приоритетная поддержка",
+      "Всё из Бизнес",
+      "Кастомные скиллы под бизнес",
+      "White-label: бот под вашим брендом",
+      "Выделенный сервер",
+      "Персональный менеджер",
     ],
     highlight: false,
+    cta: "Обсудить",
+    href: "https://t.me/refusned",
   },
 ];
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-    },
+const faqItems = [
+  {
+    q: "Как это работает?",
+    a: "Kent \u2014 это бот в Telegram. Пишешь задачу текстом или голосом \u2014 он делает. Помнит тебя, твой бизнес, клиентов. Настройка занимает от 1 дня.",
   },
+  {
+    q: "А мои данные в безопасности?",
+    a: "Да. Данные хранятся на отдельном сервере, доступном только вам. Kent не передаёт информацию третьим лицам. Все внешние действия \u2014 только с вашего подтверждения.",
+  },
+  {
+    q: "Зачем платить, если есть ChatGPT?",
+    a: "ChatGPT \u2014 чат. Kent \u2014 ассистент. Разница: память, 17 специализированных скиллов, интеграции с почтой и календарём, проактивные напоминания. И стоит дешевле: от 2\u00a0990\u00a0\u20bd/мес вместо 3\u00a0200\u00a0\u20bd за ChatGPT Plus.",
+  },
+  {
+    q: "Можно попробовать перед покупкой?",
+    a: "Да. Демо-бот бесплатный \u2014 @ask_kent_bot. Первые 3 дня любого тарифа \u2014 тоже бесплатно.",
+  },
+  {
+    q: "Сколько времени на запуск?",
+    a: "Старт: 1 день. Бизнес: 3\u20135 дней. Про: до недели. Мы настраиваем всё за вас \u2014 вам нужен только Telegram.",
+  },
+  {
+    q: "А если не понравится?",
+    a: "Гарантия 30 дней. Если Kent не окупится \u2014 вернём деньги. Без вопросов и мелкого шрифта.",
+  },
+];
+
+function FAQItem({ item }: { item: { q: string; a: string } }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-zinc-800/50">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-5 flex justify-between items-center text-left cursor-pointer"
+      >
+        <span className="font-medium text-zinc-200 pr-4">{item.q}</span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="text-zinc-500 shrink-0"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </motion.span>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="pb-5 text-zinc-400 text-sm leading-relaxed">
+              {item.a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const item = {
+const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 export default function Pricing() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20">
-      <motion.h2
-        className="text-4xl sm:text-5xl font-bold mb-4 text-zinc-100"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <span className="bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+    <section className="py-24 px-6" id="pricing">
+      <div className="max-w-5xl mx-auto">
+        <motion.h2
+          className="text-4xl sm:text-5xl font-black text-center bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           Тарифы
-        </span>
-      </motion.h2>
-      <motion.p
-        className="text-lg text-zinc-500 mb-12 max-w-2xl leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        Вы платите не за технологию, а за рабочий инструмент под конкретный
-        участок бизнеса
-      </motion.p>
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {plans.map((plan) => (
-          <motion.div
-            key={plan.name}
-            variants={item}
-            className={`relative p-8 rounded-2xl border backdrop-blur-sm card-hover flex flex-col ${
-              plan.highlight
-                ? "bg-gradient-to-br from-blue-950/40 to-cyan-950/20 border-blue-500/30"
-                : "bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 border-zinc-800/50"
-            }`}
-          >
-            {plan.highlight && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold">
-                Популярный
-              </div>
-            )}
-            <h3 className="text-xl font-bold text-zinc-100 mb-2">
-              {plan.name}
-            </h3>
-            <p className="text-zinc-500 text-sm mb-6">{plan.description}</p>
-            <div className="mb-6">
-              <span className="text-3xl font-black text-zinc-100">
-                {plan.price}
-              </span>
-              <span className="text-zinc-500 ml-2 text-sm">
-                {plan.period === "₽/мес" ? "₽/мес" : "₽"}
-              </span>
-            </div>
-            <ul className="space-y-3 flex-1">
-              {plan.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-3 text-sm text-zinc-400"
-                >
-                  <span className="text-blue-400 mt-0.5">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#"
-              className={`mt-8 block text-center py-3 rounded-full font-bold text-sm transition-all duration-150 ${
-                plan.highlight
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-500 hover:to-cyan-500 hover:scale-105"
-                  : "border-2 border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white hover:bg-zinc-900/50"
+        </motion.h2>
+        <motion.p
+          className="text-zinc-400 text-center mt-3 text-lg"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Все тарифы включают настройку и поддержку. 3 дня бесплатно.
+        </motion.p>
+
+        {/* Toggle */}
+        <motion.div
+          className="flex justify-center mt-6 mb-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="inline-flex bg-zinc-900/60 rounded-full p-1 border border-zinc-800/50">
+            <button
+              onClick={() => setIsAnnual(false)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                !isAnnual ? "bg-zinc-800 text-white" : "text-zinc-500"
               }`}
             >
-              Обсудить запуск
-            </a>
-          </motion.div>
-        ))}
-      </motion.div>
+              Месяц
+            </button>
+            <button
+              onClick={() => setIsAnnual(true)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                isAnnual ? "bg-zinc-800 text-white" : "text-zinc-500"
+              }`}
+            >
+              Год <span className="text-xs text-cyan-400 ml-1">-17%</span>
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Plans */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          {plans.map((plan) => (
+            <motion.div
+              key={plan.name}
+              variants={itemVariants}
+              className={`relative p-8 rounded-2xl border backdrop-blur-sm card-hover flex flex-col ${
+                plan.highlight
+                  ? "border-beam bg-gradient-to-br from-blue-950/40 to-cyan-950/20 border-blue-500/30 md:scale-105"
+                  : "bg-zinc-900/60 border-zinc-800/50"
+              }`}
+            >
+              {plan.highlight && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold z-10">
+                  Популярный
+                </div>
+              )}
+
+              <h3 className="text-xl font-bold text-zinc-300">{plan.name}</h3>
+              <p className="text-zinc-500 text-sm mt-1">{plan.description}</p>
+
+              <div className="mt-4 mb-1">
+                <span className="text-4xl font-black text-white">
+                  {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                </span>
+                <span className="text-zinc-500 ml-2 text-sm">
+                  \u20bd/мес
+                </span>
+              </div>
+              {isAnnual && (
+                <p className="text-xs text-zinc-500">
+                  {plan.annualTotal}\u00a0\u20bd/год
+                </p>
+              )}
+              <p className="text-xs text-zinc-600 mt-1">
+                Настройка: {plan.setup}\u00a0\u20bd
+              </p>
+
+              <ul className="space-y-3 mt-6 flex-1">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-3 text-sm text-zinc-400"
+                  >
+                    <span className="text-blue-400 mt-0.5 shrink-0">\u2713</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={plan.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-8 block text-center py-3 rounded-full font-bold text-sm transition-all duration-150 ${
+                  plan.highlight
+                    ? "shimmer-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:scale-105"
+                    : "border-2 border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white"
+                }`}
+              >
+                {plan.cta}
+              </a>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Guarantee */}
+        <motion.div
+          className="mt-10 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-3 border border-blue-500/20 bg-blue-950/20 rounded-xl px-8 py-4">
+            <span className="text-2xl">\ud83d\udee1\ufe0f</span>
+            <span className="text-zinc-300 text-sm">
+              Гарантия 30 дней — не устроит, вернём деньги.
+            </span>
+          </div>
+        </motion.div>
+
+        {/* FAQ */}
+        <motion.div
+          className="mt-20 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-2xl font-bold text-center text-zinc-100 mb-8">
+            Частые вопросы
+          </h3>
+          <div>
+            {faqItems.map((faq) => (
+              <FAQItem key={faq.q} item={faq} />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
