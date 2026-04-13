@@ -54,7 +54,7 @@ export default function Hero() {
 
           <p className="text-2xl sm:text-3xl text-zinc-300 mb-8 font-light tracking-wide animate-fade-up delay-100">
             Твой{" "}
-            <span className="text-blue-400 font-medium">помощник</span>{" "}
+            <span className="text-blue-400 font-medium">личный ИИ-ассистент</span>{" "}
             в Телеграме
           </p>
 

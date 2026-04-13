@@ -33,7 +33,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <p>
-            Kent — это помощник в{" "}
+            Kent — это личный ИИ-ассистент в{" "}
             <span className="text-blue-400 font-medium">Телеграме</span>.
             Вы пишете ему как обычному человеку, а он делает работу за вас.
           </p>
