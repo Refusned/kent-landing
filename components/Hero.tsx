@@ -54,13 +54,14 @@ export default function Hero() {
 
           <p className="text-2xl sm:text-3xl text-zinc-300 mb-8 font-light tracking-wide animate-fade-up delay-100">
             Твой{" "}
-            <span className="text-blue-400 font-medium">персональный</span>{" "}
-            ИИ-ассистент в Telegram
+            <span className="text-blue-400 font-medium">помощник</span>{" "}
+            в Телеграме
           </p>
 
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-            AI-ассистент, который берёт на себя посты, документы,
-            клиентскую базу и переписку. Работает 24/7. Стоит дешевле стажёра.
+            Напишите ему задачу — он сделает. Пост для соцсетей,
+            ответ клиенту, договор, расчёт расходов. Как живой помощник,
+            только работает круглосуточно и не просит зарплату.
           </p>
 
           {/* CTA Buttons */}
@@ -84,7 +85,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="border-2 border-zinc-700 hover:border-zinc-500 text-zinc-300 rounded-full px-8 py-4 font-bold text-lg transition-colors inline-block"
             >
-              Обсудить внедрение
+              Задать вопрос
             </a>
           </motion.div>
 
@@ -94,7 +95,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.55 }}
           >
-            3 дня бесплатно. Без карты. Без регистрации.
+            3 дня бесплатно. Ничего сложного.
           </motion.p>
 
           {/* Metrics */}

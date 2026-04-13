@@ -2,15 +2,23 @@
 
 import { motion } from "framer-motion";
 
-const rows = [
-  { label: "Память", chatgpt: "Забывает", kent: "Помнит всё о вас" },
-  { label: "Скиллы", chatgpt: "Просто чат", kent: "17 бизнес-скиллов" },
-  { label: "Интеграции", chatgpt: "Нет", kent: "Google, Twitter, CRM" },
-  { label: "Telegram", chatgpt: "Только браузер", kent: "Живёт в Telegram 24/7" },
-  { label: "Проактивность", chatgpt: "Ждёт вопроса", kent: "Брифинги, напоминания" },
-  { label: "Голос", chatgpt: "Нет в Telegram", kent: "Надиктуй — сделает" },
-  { label: "Действия", chatgpt: "Только текст", kent: "Посты, CRM, документы" },
-  { label: "Цена", chatgpt: "~3 200 ₽/мес", kent: "от 2 990 ₽/мес", noBullets: true },
+const mainRows = [
+  { without: "Тратите 3 часа на посты", with: "Посты готовы за минуту" },
+  { without: "Забываете ответить клиенту", with: "Kent напомнит и подготовит ответ" },
+  { without: "Час на договор в Word", with: "Договор готов за минуту" },
+  { without: "Всё в голове или в блокноте", with: "Kent помнит всех клиентов" },
+  { without: "Пропускаете встречи", with: "Kent напоминает заранее" },
+  { without: "Считаете на калькуляторе", with: "Kent ведёт учёт автоматически" },
+  { without: "Нужен помощник за 40 000 ₽", with: "Kent — от 2 990 ₽/мес" },
+];
+
+const advancedRows = [
+  { chatgpt: "Забывает контекст", kent: "Помнит всё о вас" },
+  { chatgpt: "Нет навыков", kent: "17 навыков для бизнеса" },
+  { chatgpt: "Нет интеграций", kent: "Почта, календарь, соцсети" },
+  { chatgpt: "Только браузер", kent: "Живёт в Телеграме 24/7" },
+  { chatgpt: "Ждёт вашего вопроса", kent: "Сам присылает отчёты" },
+  { chatgpt: "~3 200 ₽/мес", kent: "от 2 990 ₽/мес" },
 ];
 
 export default function Comparison() {
@@ -24,61 +32,66 @@ export default function Comparison() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Kent vs ChatGPT
+          Почему Kent
         </motion.h2>
-        <motion.p
-          className="text-zinc-400 text-center mt-3 text-lg mb-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+
+        {/* Table 1: For everyone */}
+        <motion.div
+          className="rounded-2xl overflow-hidden border border-zinc-800/50 mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          ChatGPT — отличный чат. Kent — ваш сотрудник.
-        </motion.p>
+          <div className="grid grid-cols-2 bg-zinc-900/80 px-6 py-4">
+            <div className="text-sm text-zinc-500 font-medium">Без помощника</div>
+            <div className="text-sm text-blue-400 font-bold">С Kent</div>
+          </div>
+          {mainRows.map((row, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-2 px-6 py-4 border-b border-zinc-800/30 ${
+                i % 2 === 0 ? "bg-zinc-900/20" : ""
+              }`}
+            >
+              <div className="text-zinc-500 text-sm">{row.without}</div>
+              <div className="text-zinc-200 text-sm">{row.with}</div>
+            </div>
+          ))}
+        </motion.div>
 
+        {/* Table 2: For advanced users */}
         <motion.div
-          className="rounded-2xl overflow-hidden border border-zinc-800/50"
+          className="mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          {/* Header */}
-          <div className="grid grid-cols-3 bg-zinc-900/80 px-6 py-4">
-            <div />
-            <div className="text-sm text-zinc-500 font-medium text-center">
-              ChatGPT Plus
+          <p className="text-sm text-zinc-600 mb-4">
+            Уже пользуетесь ChatGPT? Вот чем Kent лучше:
+          </p>
+          <div className="rounded-xl overflow-hidden border border-zinc-800/30">
+            <div className="grid grid-cols-2 bg-zinc-900/50 px-5 py-3">
+              <div className="text-xs text-zinc-500">ChatGPT Plus</div>
+              <div className="text-xs text-blue-400 font-medium">Kent</div>
             </div>
-            <div className="text-sm text-blue-400 font-bold text-center">
-              Kent
-            </div>
+            {advancedRows.map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-2 px-5 py-3 border-b border-zinc-800/20 ${
+                  i % 2 === 0 ? "bg-zinc-900/10" : ""
+                }`}
+              >
+                <div className="text-zinc-600 text-xs">
+                  <span className="mr-1">✕</span>{row.chatgpt}
+                </div>
+                <div className="text-zinc-300 text-xs">
+                  <span className="text-blue-400 mr-1">✓</span>{row.kent}
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Rows */}
-          {rows.map((row, i) => (
-            <div
-              key={row.label}
-              className={`grid grid-cols-3 px-6 py-4 border-b border-zinc-800/30 ${
-                i % 2 === 0 ? "bg-zinc-900/20" : ""
-              }`}
-            >
-              <div className="text-zinc-400 text-sm font-medium">
-                {row.label}
-              </div>
-              <div className="text-zinc-500 text-sm text-center">
-                {!row.noBullets && (
-                  <span className="text-zinc-600 mr-1">✕</span>
-                )}
-                {row.chatgpt}
-              </div>
-              <div className="text-zinc-200 text-sm text-center">
-                {!row.noBullets && (
-                  <span className="text-blue-400 font-medium mr-1">✓</span>
-                )}
-                {row.kent}
-              </div>
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>

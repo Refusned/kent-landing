@@ -20,7 +20,7 @@ export default function CTA() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Хватит делать всё вручную
+          Попробуйте — это бесплатно
         </motion.h2>
 
         <motion.p
@@ -30,7 +30,7 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Передайте рутину Kent. Начните за 3 минуты.
+          Напишите Kent прямо сейчас. Он ответит за 5 секунд.
         </motion.p>
 
         <motion.div
@@ -46,7 +46,7 @@ export default function CTA() {
             rel="noopener noreferrer"
             className="shimmer-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full px-8 py-4 font-bold text-lg hover:scale-105 transition-transform inline-block"
           >
-            Попробовать бесплатно →
+            Написать Kent →
           </a>
           <a
             href="https://t.me/refusned"
@@ -54,7 +54,7 @@ export default function CTA() {
             rel="noopener noreferrer"
             className="border-2 border-zinc-700 hover:border-zinc-500 text-zinc-300 rounded-full px-8 py-4 font-bold text-lg transition-colors inline-block"
           >
-            Написать в Telegram
+            Задать вопрос
           </a>
         </motion.div>
 
@@ -65,7 +65,7 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          3 дня бесплатно. Гарантия 30 дней.
+          3 дня бесплатно. Ничего сложного. Гарантия 30 дней.
         </motion.p>
       </div>
     </section>
