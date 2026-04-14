@@ -31,27 +31,14 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <p className="text-sm font-medium text-zinc-400 mb-2">Ресурсы</p>
-            <a
-              href="https://github.com/Refusned/Kent-Overlay"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-zinc-500 hover:text-blue-400 transition-colors"
-            >
-              GitHub
-            </a>
+            <p className="text-sm font-medium text-zinc-400 mb-2">Информация</p>
+            <p className="text-sm text-zinc-500">
+              Персональный AI-помощник для предпринимателей, фрилансеров и малого бизнеса
+            </p>
           </div>
         </div>
         <div className="text-xs text-zinc-600 text-center mt-8">
-          Built by Kent 👔 — powered by{" "}
-          <a
-            className="hover:text-zinc-400 transition-colors"
-            href="https://github.com/openclaw/openclaw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            OpenClaw
-          </a>
+          Kent 👔 — AI-ассистент для бизнеса
         </div>
       </div>
     </footer>

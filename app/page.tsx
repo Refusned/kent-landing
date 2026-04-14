@@ -3,6 +3,8 @@ import About from "@/components/About";
 import HowItWorks from "@/components/HowItWorks";
 import Superpowers from "@/components/Superpowers";
 import UseCases from "@/components/UseCases";
+import ROI from "@/components/ROI";
+import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import Comparison from "@/components/Comparison";
 import CTA from "@/components/CTA";
@@ -16,6 +18,8 @@ export default function Home() {
       <HowItWorks />
       <Superpowers />
       <UseCases />
+      <ROI />
+      <Testimonials />
       <Pricing />
       <Comparison />
       <CTA />

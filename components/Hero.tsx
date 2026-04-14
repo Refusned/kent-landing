@@ -40,28 +40,32 @@ export default function Hero() {
       {/* Layer 3: Content */}
       <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
         <div className="text-center">
-          <h1 className="text-7xl sm:text-9xl font-black mb-6 tracking-tight animate-fade-up">
+          <p className="text-sm font-medium tracking-widest text-blue-400/80 uppercase mb-4 animate-fade-up">
+            AI-ассистент в Telegram
+          </p>
+
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 tracking-tight animate-fade-up leading-tight">
+            <span className="text-zinc-100">
+              Рутина сжирает
+            </span>
+            <br />
             <span
               className="bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent animate-shimmer"
               style={{ backgroundSize: "200%" }}
             >
-              Kent
-            </span>
-            <span className="ml-4 animate-float animate-glow text-7xl sm:text-8xl inline-block">
-              👔
+              ваше время?
             </span>
           </h1>
 
-          <p className="text-2xl sm:text-3xl text-zinc-300 mb-8 font-light tracking-wide animate-fade-up delay-100">
-            Твой{" "}
-            <span className="text-blue-400 font-medium">личный ИИ-ассистент</span>{" "}
-            в Телеграме
+          <p className="text-xl sm:text-2xl text-zinc-300 mb-4 font-light tracking-wide animate-fade-up delay-100">
+            <span className="text-blue-400 font-medium">Kent</span>{" "}
+            берёт её на себя
+            <span className="ml-2 animate-float inline-block">👔</span>
           </p>
 
           <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-            Напишите ему задачу — он сделает. Пост для соцсетей,
-            ответ клиенту, договор, расчёт расходов. Как живой помощник,
-            только работает круглосуточно и не просит зарплату.
+            Посты для соцсетей, ответы клиентам, договоры, учёт расходов.
+            Напишите задачу в Telegram — Kent сделает. 24/7, дешевле стажёра.
           </p>
 
           {/* CTA Buttons */}
@@ -95,7 +99,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.55 }}
           >
-            3 дня бесплатно. Ничего сложного.
+            7 дней бесплатно. Ничего сложного.
           </motion.p>
 
           {/* Metrics */}

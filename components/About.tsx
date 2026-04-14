@@ -34,7 +34,7 @@ export default function About() {
         >
           <p>
             Kent — это личный ИИ-ассистент в{" "}
-            <span className="text-blue-400 font-medium">Телеграме</span>.
+            <span className="text-blue-400 font-medium">Telegram</span>.
             Вы пишете ему как обычному человеку, а он делает работу за вас.
           </p>
           <p>
@@ -44,7 +44,7 @@ export default function About() {
           </p>
           <p className="text-zinc-300 font-medium">
             Не нужно ничего устанавливать. Не нужны никакие знания.
-            Просто откройте Телеграм и напишите.
+            Просто откройте Telegram и напишите.
           </p>
         </motion.div>
 

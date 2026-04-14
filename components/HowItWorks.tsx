@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "1",
-    title: "Откройте Телеграм",
+    title: "Откройте Telegram",
     description: "У вас уже есть всё, что нужно. Никаких новых приложений.",
   },
   {

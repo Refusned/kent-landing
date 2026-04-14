@@ -17,7 +17,7 @@ const plans = [
       "Голосовые сообщения",
       "Работает 24 часа",
       "Поддержка в чате",
-      "3 дня бесплатно",
+      "7 дней бесплатно",
     ],
     highlight: false,
     cta: "Попробовать",
@@ -37,7 +37,7 @@ const plans = [
       "Документы и договоры",
       "Учёт расходов и доходов",
       "Приоритетная поддержка",
-      "3 дня бесплатно",
+      "7 дней бесплатно",
     ],
     highlight: true,
     cta: "Выбрать",
@@ -66,15 +66,15 @@ const plans = [
 const faqItems = [
   {
     q: "Как это работает?",
-    a: "Вы открываете Телеграм, пишете Kent задачу — он отвечает. Всё как в обычном чате. Можно писать текстом или голосом.",
+    a: "Вы открываете Telegram, пишете Kent задачу — он отвечает. Всё как в обычном чате. Можно писать текстом или голосом.",
   },
   {
     q: "А если я не разбираюсь в технологиях?",
-    a: "Никаких знаний не нужно. Если умеете писать в Телеграм — уже умеете работать с Kent.",
+    a: "Никаких знаний не нужно. Если умеете писать в Telegram — уже умеете работать с Kent.",
   },
   {
     q: "Можно попробовать?",
-    a: "Да. Напишите @ask_kent_bot — это бесплатно. Первые 3 дня полной версии тоже бесплатно.",
+    a: "Да. Напишите @ask_kent_bot — это бесплатно. Первые 7 дней полной версии тоже бесплатно.",
   },
   {
     q: "А если не понравится?",
@@ -168,8 +168,24 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          От 100 ₽ в день. Мы всё настроим за вас. 3 дня бесплатно.
+          От 100 ₽ в день. Мы всё настроим за вас. 7 дней бесплатно.
         </motion.p>
+
+        {/* Early bird promo */}
+        <motion.div
+          className="flex justify-center mt-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-full px-5 py-2">
+            <span className="text-amber-400 text-sm">🔥</span>
+            <span className="text-amber-300 text-sm font-medium">
+              Первым 20 клиентам — настройка бесплатно
+            </span>
+          </div>
+        </motion.div>
 
         {/* Toggle */}
         <motion.div
