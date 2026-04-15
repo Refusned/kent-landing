@@ -65,7 +65,7 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          7 дней бесплатно. Ничего сложного. Гарантия 30 дней.
+          3 дня бесплатно. Ничего сложного. Гарантия 30 дней.
         </motion.p>
 
         <motion.div

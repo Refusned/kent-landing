@@ -85,7 +85,7 @@ export default function Superpowers() {
   );
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 scroll-mt-16" id="superpowers">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-black text-center bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent"

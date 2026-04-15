@@ -69,7 +69,12 @@ body {
 }
 
 .animate-fade-up {
-  opacity: 0;
+  animation-fill-mode: both;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up {
+    opacity: 0;
+  }
 }
 
 .delay-100 { animation-delay: 0.1s; }

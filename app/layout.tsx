@@ -12,6 +12,33 @@ export const metadata: Metadata = {
   title: "Kent — AI-ассистент в Telegram для бизнеса",
   description:
     "Kent — персональный AI-помощник в Telegram. Пишет посты, ведёт CRM, готовит документы, считает расходы. 17 навыков, работает 24/7. От 2 990 ₽/мес.",
+  openGraph: {
+    title: "Kent — AI-ассистент в Telegram для бизнеса",
+    description:
+      "Персональный AI-помощник: посты, CRM, документы, учёт расходов. 17 навыков, 24/7. От 100 ₽/день.",
+    url: "https://kent-ai.netlify.app",
+    siteName: "Kent AI",
+    locale: "ru_RU",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kent — AI-ассистент в Telegram",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kent — AI-ассистент в Telegram для бизнеса",
+    description:
+      "Персональный AI-помощник: посты, CRM, документы, учёт расходов. 17 навыков, 24/7.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

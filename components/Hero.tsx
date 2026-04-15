@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-blue-500/10 via-transparent to-transparent blur-3xl" />
 
       {/* Layer 3: Content */}
-      <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
+      <div className="relative max-w-4xl mx-auto px-6 pt-28 pb-24 sm:pt-36 sm:pb-32">
         <div className="text-center">
           <p className="text-sm font-medium tracking-widest text-blue-400/80 uppercase mb-4 animate-fade-up">
             AI-ассистент в Telegram
@@ -99,7 +99,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.55 }}
           >
-            7 дней бесплатно. Ничего сложного.
+            3 дня бесплатно. Ничего сложного.
           </motion.p>
 
           {/* Metrics */}
@@ -111,15 +111,15 @@ export default function Hero() {
           >
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                <AnimatedNumber value={30} suffix="+" />
+                <AnimatedNumber value={5} suffix=" сек" />
               </div>
-              <div className="text-xs sm:text-sm text-zinc-500 mt-1">постов/мес</div>
+              <div className="text-xs sm:text-sm text-zinc-500 mt-1">ответ на любой вопрос</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                <AnimatedNumber value={17} />
+                <AnimatedNumber value={20} suffix="+" />
               </div>
-              <div className="text-xs sm:text-sm text-zinc-500 mt-1">скиллов</div>
+              <div className="text-xs sm:text-sm text-zinc-500 mt-1">навыков</div>
             </div>
             <div className="text-center">
               <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">

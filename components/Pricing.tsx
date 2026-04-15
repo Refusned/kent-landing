@@ -17,7 +17,7 @@ const plans = [
       "Голосовые сообщения",
       "Работает 24 часа",
       "Поддержка в чате",
-      "7 дней бесплатно",
+      "3 дня бесплатно",
     ],
     highlight: false,
     cta: "Попробовать",
@@ -37,7 +37,7 @@ const plans = [
       "Документы и договоры",
       "Учёт расходов и доходов",
       "Приоритетная поддержка",
-      "7 дней бесплатно",
+      "3 дня бесплатно",
     ],
     highlight: true,
     cta: "Выбрать",
@@ -74,7 +74,7 @@ const faqItems = [
   },
   {
     q: "Можно попробовать?",
-    a: "Да. Напишите @ask_kent_bot — это бесплатно. Первые 7 дней полной версии тоже бесплатно.",
+    a: "Да. Напишите @ask_kent_bot — это бесплатно. Первые 3 дня полной версии тоже бесплатно.",
   },
   {
     q: "А если не понравится?",
@@ -150,7 +150,7 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <section className="py-24 px-6" id="pricing">
+    <section className="py-24 px-6 scroll-mt-16" id="pricing">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           className="text-4xl sm:text-5xl font-black text-center bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent"
@@ -168,7 +168,7 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          От 100 ₽ в день. Мы всё настроим за вас. 7 дней бесплатно.
+          От 100 ₽ в день. Мы всё настроим за вас. 3 дня бесплатно.
         </motion.p>
 
         {/* Early bird promo */}
@@ -301,11 +301,15 @@ export default function Pricing() {
               Гарантия 30 дней — не устроит, вернём деньги.
             </span>
           </div>
+          <p className="text-xs text-zinc-600 mt-3">
+            Оплата: российские карты, СБП, Тинькофф, переводом
+          </p>
         </motion.div>
 
         {/* FAQ */}
         <motion.div
-          className="mt-20 max-w-3xl mx-auto"
+          className="mt-20 max-w-3xl mx-auto scroll-mt-16"
+          id="faq"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

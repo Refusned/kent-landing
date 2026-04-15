@@ -18,7 +18,7 @@ const advancedRows = [
   { chatgpt: "Нет интеграций", kent: "Почта, календарь, соцсети" },
   { chatgpt: "Только браузер", kent: "Живёт в Telegram 24/7" },
   { chatgpt: "Ждёт вашего вопроса", kent: "Сам присылает отчёты" },
-  { chatgpt: "~3 200 ₽/мес", kent: "от 2 990 ₽/мес" },
+  { chatgpt: "~2 000 ₽/мес", kent: "от 2 990 ₽/мес" },
 ];
 
 export default function Comparison() {
@@ -37,7 +37,7 @@ export default function Comparison() {
 
         {/* Table 1: For everyone */}
         <motion.div
-          className="rounded-2xl overflow-hidden border border-zinc-800/50 mt-12"
+          className="rounded-2xl overflow-hidden border border-zinc-800/50 mt-12 overflow-x-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function Comparison() {
           <p className="text-sm text-zinc-600 mb-4">
             Уже пользуетесь ChatGPT? Вот чем Kent лучше:
           </p>
-          <div className="rounded-xl overflow-hidden border border-zinc-800/30">
+          <div className="rounded-xl overflow-hidden border border-zinc-800/30 overflow-x-auto">
             <div className="grid grid-cols-2 bg-zinc-900/50 px-5 py-3">
               <div className="text-xs text-zinc-500">ChatGPT Plus</div>
               <div className="text-xs text-blue-400 font-medium">Kent</div>

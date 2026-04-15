@@ -83,7 +83,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          * Отзывы от бета-тестеров. Присоединяйтесь — первые 7 дней бесплатно.
+          * Отзывы от бета-тестеров. Присоединяйтесь — первые 3 дня бесплатно.
         </motion.p>
       </div>
     </section>
