@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kent-ai.netlify.app"),
   title: "Kent — AI-ассистент в Telegram для бизнеса",
   description:
     "Kent — персональный AI-помощник в Telegram. Пишет посты, ведёт CRM, готовит документы, считает расходы. 17 навыков, работает 24/7. От 2 990 ₽/мес.",
