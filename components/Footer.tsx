@@ -46,12 +46,12 @@ export default function Footer() {
                 Частые вопросы
               </a>
               <a
-                href="https://t.me/kent_assistant"
+                href="https://t.me/ask_kent_bot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block hover:text-blue-400 transition-colors"
               >
-                Канал с кейсами
+                Попробовать бесплатно
               </a>
             </div>
           </div>
